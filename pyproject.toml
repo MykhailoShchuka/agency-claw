@@ -1,0 +1,15 @@
+# only listed properties are used by the system
+
+[project]
+name = "openclaw-starter-template"
+description = "One-click OpenClaw deployment template for Agencii"
+version = "0.1.0"
+license = { text = "MIT" }
+keywords = ["agency-swarm", "agencii", "openclaw"]
+
+[tool.template]
+version = "0.1.0"
+
+[tool.build]
+memory="1564"
+cpu="1"
