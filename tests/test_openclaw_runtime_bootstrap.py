@@ -21,7 +21,7 @@ class EnsureOpenClawRuntimeTests(unittest.TestCase):
     ) -> None:
         with patch.dict(os.environ, {"OPENCLAW_GATEWAY_COMMAND": '"openclaw gateway'}, clear=False):
             bootstrap.ensure_openclaw_runtime()
-            self.assertEqual(os.environ["OPENCLAW_GATEWAY_COMMAND"], "/usr/local/bin/openclaw gateway")
+            self.assertEqual(os.environ["OPENCLAW_GATEWAY_COMMAND"], "/usr/local/bin/openclaw gateway run")
 
         bootstrap_runtime_mock.assert_not_called()
         resolve_home_mock.assert_called_once()

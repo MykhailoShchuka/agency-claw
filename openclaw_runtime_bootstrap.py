@@ -92,7 +92,7 @@ def _build_installed_gateway_command() -> str | None:
     openclaw_bin = shutil.which("openclaw")
     if not openclaw_bin:
         return None
-    return f"{shlex.quote(openclaw_bin)} gateway"
+    return f"{shlex.quote(openclaw_bin)} gateway run"
 
 
 def _read_bool_env(name: str, *, default: bool) -> bool:
@@ -367,7 +367,7 @@ def _export_runtime(runtime: _OpenClawRuntimePaths) -> None:
     os.environ["OPENCLAW_NODE_BIN"] = str(runtime.node_bin)
     os.environ.setdefault("NODE_OPTIONS", _DEFAULT_NODE_OPTIONS)
     gateway_bin = shlex.quote(str(runtime.openclaw_bin))
-    os.environ["OPENCLAW_GATEWAY_COMMAND"] = f"{gateway_bin} gateway"
+    os.environ["OPENCLAW_GATEWAY_COMMAND"] = f"{gateway_bin} gateway run"
 
 
 def _export_home_paths(home_dir: Path) -> None:
