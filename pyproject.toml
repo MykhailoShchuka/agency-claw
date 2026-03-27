@@ -16,3 +16,4 @@ build_prepare_command = "python -u prepare_openclaw_template.py"
 memory="2048"
 cpu="1"
 
+
